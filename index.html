@@ -1,14 +1,39 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Test</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<title>Chatbox</title>
 		<meta charset="utf-8">
+		<script>
+			var know = {
+				"hallo" : "<b>Bot: </b>heeii x",
+				"hoe gaat het?" : "<b>Bot: </b>met mij geweldig!",
+				"wat is het weer?" : "<b>Bot: </b>Zoek maar op <a href='https://buienradar.nl'>buienradar.nl</a>",
+				"kaas of vlees" : "<b>Bot: </b>kaas",
+				"fornite of pubg" : "<b>Bot: </b>pubg is beter",
+				"" : ""
+			};
+			function talk() {
+				var user = document.getElementById("userBox").value;
+				document.getElementById("chatLog").innerHTML += user+"<br>";
+				if (user in know) {
+					document.getElementById("chatLog").innerHTML += know[user]+"<br>";
+				} else {
+					document.getElementById("chatLog").innerHTML += "<b>Bot: </b>Ik begrijp je niet..<br>";
+				}
+			}
+		</script>	
 	</head>
 	<body>
 		<h1>Chatbot</h1>
-		<div id="chatbotlogo">
-		<img src="chatbot2.png" alt="chatbotlogo">
+		<hr>
+		<div id="chatbox">
+			<p id="chatLog">Chat Bot v1.0<br></p>
+			
 		</div>
-		<input type="text" name="chatbox">
+		<div id="chatbotlogo">
+			<img src="chatbot2.png" alt="chatbotlogo">
+		</div>
+		<input id="userBox" placeholder="Typ iets..." type="text" onkeydown="if (event.keyCode == 13) {talk()}">
 	</body>
 </html>
