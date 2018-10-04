@@ -1,3 +1,10 @@
 #chatbotlogo {
-	margin: auto;
+    display: block;
+    margin-left: auto;
+}
+#chatbox {
+	width: 400px;
+	height: 480px;
+	background-color: purple;
+	float: left;
 }
