@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script>
+			var know = {
+				"hallo" : "<b>Bot: </b>heeii x",
+				"hoe gaat het?" : "<b>Bot: </b>met mij geweldig!",
+				"wat is het weer?" : "<b>Bot: </b>Zoek maar op <a href='https://buienradar.nl'>buienradar.nl</a>",
+				"" : "",
+				"" : "",
+				"" : ""
+			};
+			function talk() {
+				var user = document.getElementById("userBox").value;
+				document.getElementById("chatLog").innerHTML += user+"<br>";
+				if (user in know) {
+					document.getElementById("chatLog").innerHTML += know[user]+"<br>";
+				} else {
+					document.getElementById("chatLog").innerHTML += "<b>Bot: </b>Ik begrijp je niet..<br>";
+				}
+			}
+		</script>	
+	</head>
+	<body>
+		<p id="chatLog">Chat Bot v1.0<br></p>
+		<hr>
+		<input id="userBox" placeholder="Typ iets..." type="text" onkeydown="if (event.keyCode == 13) {talk()}">
+	</body>
+</html>﻿
